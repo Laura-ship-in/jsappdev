@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row  row-gap-4">
+        <div class="col-sm-3 " *ngFor="let user of users">
+            <div class="card" style="width: 18rem;">
+                <img [src]="apiUrl+'/uploads/' + user.poza" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.nume }} {{ user.prenume }}</h5>
+                    <p class="card-text">{{user.email}}</p>
+                    <p class="card-text">{{user.telefon}}</p>
+                    <p class="card-text">{{user.poza}}</p>
+                    
+                    <a [routerLink]="['/profil', user.id]" class="btn btn-primary">Vezi mai mult</a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
