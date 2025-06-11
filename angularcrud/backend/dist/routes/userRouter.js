@@ -111,9 +111,10 @@ userRouter.put("/:id", jsonParser, (req, res) => __awaiter(void 0, void 0, void 
 }));
 // Delete user
 userRouter.delete("/:id", jsonParser, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userId = Number(req.params.id);
     const user = req.body;
     console.log(req.body);
-    userModel.deleteUser(user, (err) => {
+    userModel.deleteUser(userId, (err) => {
         if (err) {
             return res.status(500).json({ "message": err.message });
         }

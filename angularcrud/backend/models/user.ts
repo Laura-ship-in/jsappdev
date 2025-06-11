@@ -84,10 +84,10 @@ export const update = (user: User, callback: Function) => {
   });
 };
 // delete user
-export const deleteUser = (user: User, callback: Function) => {
+export const deleteUser = (id: number, callback: Function) => {
   const queryString = `DELETE FROM jsusers WHERE id=?`;
 
-  db.query(queryString, [user.id], (err, result) => {
+  db.query(queryString, [id], (err, result) => {
     if (err) {
       callback(err);
     }

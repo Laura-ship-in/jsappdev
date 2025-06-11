@@ -78,9 +78,9 @@ const update = (user, callback) => {
 };
 exports.update = update;
 // delete user
-const deleteUser = (user, callback) => {
+const deleteUser = (id, callback) => {
     const queryString = `DELETE FROM jsusers WHERE id=?`;
-    db_1.db.query(queryString, [user.id], (err, result) => {
+    db_1.db.query(queryString, [id], (err, result) => {
         if (err) {
             callback(err);
         }

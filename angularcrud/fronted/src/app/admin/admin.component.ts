@@ -39,20 +39,7 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  // createOrUpdateUser(form: { value: User }) {
-  //   if (this.selectedUser && this.selectedUser.id) {
-  //     this.apiService
-  //       .updateUser(this.selectedUser.id, form.value)
-  //       .subscribe((user: User) => {
-  //         console.log('User updated', user);
-  //       });
-  //   } else {
-  //     this.apiService.createUser(form.value).subscribe((user: User) => {
-  //       this.readUsers();
-  //       console.log('User created, ', user);
-  //     });
-  //   }
-  // }
+  // Removed duplicate implementation of createOrUpdateUser
 
   createOrUpdateUser(form: { value: User }) {
     const formData = new FormData();
@@ -60,9 +47,8 @@ export class AdminComponent implements OnInit {
     formData.append('prenume', this.selectedUser.prenume);
     formData.append('email', this.selectedUser.email);
     formData.append('telefon', this.selectedUser.telefon);
-    formData.append(
-      'datanastere',
-      this.selectedUser.datanastere?.toString() || ''
+    formData.append('id', this.selectedUser.id.toString());
+      formData.append('datanastere', this.selectedUser.datanastere?.toString() || ''
     );
     if (this.selectedFile) {
       formData.append('poza', this.selectedFile);

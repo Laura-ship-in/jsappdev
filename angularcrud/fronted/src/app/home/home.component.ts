@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ApiService } from '../api.service';
 import { User } from '../models/user';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment';
 
