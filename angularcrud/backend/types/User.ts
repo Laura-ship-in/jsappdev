@@ -10,6 +10,7 @@ export interface User extends BasicUser {
     cnp?:string,
     poza?:string,
     dataadaugare?:Date,
+    status?:number, // 0 - inactiv, 1 - activ
     actiune?:string
 }
 export interface UserWithDetails extends BasicUser, User{

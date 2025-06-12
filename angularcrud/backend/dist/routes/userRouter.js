@@ -124,3 +124,17 @@ userRouter.delete("/:id", jsonParser, (req, res) => __awaiter(void 0, void 0, vo
         });
     });
 }));
+userRouter.put("/status:id", jsonParser, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userId = Number(req.params.id);
+    const user = req.body;
+    console.log(req.body);
+    userModel.statusUser(userId, (err) => {
+        if (err) {
+            return res.status(500).json({ "message": err.message });
+        }
+        // res.status(200).send();
+        res.status(200).json({
+            "message": 'success'
+        });
+    });
+}));

@@ -98,4 +98,19 @@ userRouter.delete("/:id",jsonParser, async (req: Request, res: Response) => {
       });
   })
 });
+userRouter.put("/status:id",jsonParser, async (req: Request, res: Response) => {
+  const userId: number = Number(req.params.id);
+  const user: User = req.body;
+  console.log(req.body);
+  userModel.deleteUser(userId, (err: Error) => {
+    if (err) {
+      return res.status(500).json({"message": err.message});
+    }
+
+    // res.status(200).send();
+    res.status(200).json({
+      "message": 'success'
+      });
+  })
+});
 export {userRouter};
